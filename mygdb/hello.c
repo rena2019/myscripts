@@ -7,8 +7,6 @@ void dummy1() {
 }
 
 int main() {
-    //int myvar = 5;   // myvar wird der Wert 5 zugewiesen
-
     printf("Hello World!\n");
 
     // Aufruf der Dummy-Funktion
