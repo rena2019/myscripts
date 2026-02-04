@@ -1,0 +1,22 @@
+<html>
+<head>
+<script type="module">
+import espruinoBleUart from 'https://cdn.skypack.dev/espruino-ble-uart';
+
+window.myconnect = async function () {
+  console.log("CONNECT");
+
+  const uart = await espruinoBleUart.connect();
+
+  uart.write(new TextEncoder().encode("hello BLE UART\n"));
+
+  uart.onData = (data) => {
+    console.log(new TextDecoder().decode(data));
+  };
+};
+</script>
+</head>
+<body>
+<a href="#" onclick="myconnect()">CONNECT</a>
+</body>
+</html>
